@@ -9,6 +9,11 @@ const MockFollowersListComponent = (props) => (
 );
 
 describe('FollowersList', () => {
+  beforeEach(() => console.log('running before each test'));
+  beforeAll(() => console.log('running once before all tests'));
+  afterEach(() => console.log('running after each test'));
+  afterAll(() => console.log('running once after all tests'));
+
   it('should render one follower', async () => {
     render(<MockFollowersListComponent />);
     let divElement = await screen.findByTestId(/follower-item-0/);
